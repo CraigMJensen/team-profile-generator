@@ -6,14 +6,14 @@ test('if engineer has github', () => {
   expect(engineer.github).toEqual(expect.any(String));
 });
 
-test('if getGithub function gets github object', () => {
+test('if getGithub function gets github', () => {
   const engineer = new Engineer('craigmjensen');
 
-  expect(engineer.getGithub().github).toEqual(engineer.github);
+  expect(engineer.getGithub()).toEqual(engineer.github);
 });
 
 test('will return role of Engineer', () => {
   const engineer = new Engineer('craigmjensen');
 
-  expect(engineer.getRole().role).toBe('Engineer');
+  expect(engineer.getRole()).toBe('Engineer');
 });

@@ -9,5 +9,5 @@ test('if officeNumber returns a number', () => {
 test('will return role of Manager', () => {
   const manager = new Manager(100);
 
-  expect(manager.getRole().role).toBe('Manager');
+  expect(manager.getRole()).toBe('Manager');
 });

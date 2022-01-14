@@ -8,26 +8,26 @@ test('checks to see if employee has name, id, and email as constructor', () => {
   expect(employee.email).toEqual(expect.any(String));
 });
 
-test('returns employee name object', () => {
+test('returns employee name', () => {
   const employee = new Employee('Craig', 517, 'cmjensen82@gmail.com');
 
-  expect(employee.getName()).toEqual(expect.any(Object));
+  expect(employee.getName()).toEqual(expect.any(String));
 });
 
-test('returns employee id object', () => {
+test('returns employee id', () => {
   const employee = new Employee('Craig', 517, 'cmjensen82@gmail.com');
 
-  expect(employee.getId()).toEqual(expect.any(Object));
+  expect(employee.getId()).toEqual(expect.any(Number));
 });
 
-test('returns employee email object', () => {
+test('returns employee email', () => {
   const employee = new Employee('Craig', 517, 'cmjensen82@gmail.com');
 
-  expect(employee.getEmail()).toEqual(expect.any(Object));
+  expect(employee.getEmail()).toEqual(expect.any(String));
 });
 
-test('returns employee role as object', () => {
+test('returns employee role', () => {
   const employee = new Employee('Craig', 517, 'cmjensen82@gmail.com');
 
-  expect(employee.getRole()).toEqual(expect.any(Object));
+  expect(employee.getRole()).toBe('Employee');
 });
