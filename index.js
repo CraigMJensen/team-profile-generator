@@ -183,10 +183,26 @@ const employeeInput = () => {
     });
 };
 
+const writeFile = (data) => {
+  fs.writeFile('./dist/index.html', data, (error) => {
+    if (error) {
+      console.log(error);
+      return;
+    } else {
+      console.log(
+        'Open the dist folder. Your HTML page is ready to be viewed!'
+      );
+    }
+  });
+};
+
 managerInput()
   .then(employeeInput)
   .then((teamArray) => {
     return createCards(teamArray);
+  })
+  .then((writeHTML) => {
+    return writeFile(writeHTML);
   })
   .catch((error) => {
     console.log(error);
