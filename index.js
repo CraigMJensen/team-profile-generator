@@ -5,7 +5,7 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-const generateEmpCards = require('./src/createHTML');
+const createCards = require('./src/createHTML');
 
 const teamArray = [];
 
@@ -75,7 +75,6 @@ const managerInput = () => {
       const manager = new Manager(officeNumber, name, id, email);
 
       teamArray.push(manager);
-      console.log(teamArray);
     });
 };
 
@@ -180,7 +179,6 @@ const employeeInput = () => {
       if (confirmAddEmployee) {
         return employeeInput(teamArray);
       }
-      console.log(teamArray);
       return teamArray;
     });
 };
@@ -188,7 +186,7 @@ const employeeInput = () => {
 managerInput()
   .then(employeeInput)
   .then((teamArray) => {
-    return generateEmpCards(teamArray);
+    return createCards(teamArray);
   })
   .catch((error) => {
     console.log(error);
