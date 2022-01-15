@@ -5,6 +5,8 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+const generateEmpCards = require('./src/createHTML');
+
 const teamArray = [];
 
 const managerInput = () => {
@@ -185,6 +187,9 @@ const employeeInput = () => {
 
 managerInput()
   .then(employeeInput)
+  .then((teamArray) => {
+    return generateEmpCards(teamArray);
+  })
   .catch((error) => {
     console.log(error);
   });
