@@ -12,10 +12,6 @@
 
 
 
-## Link to Active Product
-
-  * http://craigmjensen.github.io/team-profile-generator/
-
 ## Table of Contents
 
   * [Installation](#installation)
