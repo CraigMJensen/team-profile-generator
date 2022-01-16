@@ -31,39 +31,53 @@ const createCards = (empTeam) => {
 
 const createManager = function (manager) {
   return `
-  <div class='card mb-3 p-3' style='max-width: 18rem;'>
-    <h3>${manager.name}</h3>
-    <h4>${manager.getRole()}</h4>
-
-    <p>${manager.email}</p>
-    <p>Office Number ${manager.officeNumber}</p>
-    <p>Employee ID# ${manager.id}</p>
+  <div class='card border-success col-lg-4 py-2' style='max-width: 18rem;'>
+    <div class='card-header text-center bg-success'>
+      <h3>${manager.name}</h3>
+      <h4>${manager.getRole()}</h4>
+    </div>
+    <div class='card-body bg-secondary'>
+      <p>Employee ID# ${manager.id}</p>
+      <p>Office # ${manager.officeNumber}</p>
+      <a href="mailto:${manager.email}" class="text-white">${manager.email}</a>
+    </div>
   </div>
     `;
 };
 
 const createEngineer = function (engineer) {
   return `
-  <div class='card mb-3 p-3' style='max-width: 18rem;'>
-    <h3>${engineer.name}</h3>
-    <h4>${engineer.getRole()}</h4>
-
-    <p>${engineer.email}</p>
-    <p>Github ${engineer.github}</p>
-    <p>Employee ID# ${engineer.id}</p>
+  <div class='card border-success col-lg-4 py-2' style='max-width: 18rem;'>
+    <div class='card-header text-center bg-success'>
+      <h3>${engineer.name}</h3>
+      <h4>${engineer.getRole()}</h4>
+    </div>
+    <div class='card-body bg-secondary'>
+      <p>Employee ID# ${engineer.id}</p>
+      <p>Github <a href="https://github.com/${
+        engineer.github
+      }" class="text-white"
+      >${engineer.github}</p>
+      <a href="mailto:${engineer.email}" class="text-white">${
+    engineer.email
+  }</a>
+    </div>
   </div>
     `;
 };
 
 const createIntern = function (intern) {
   return `
-  <div class='card mb-3 p-3' style='max-width: 18rem;'>
-    <h3>${intern.name}</h3>
-    <h4>${intern.getRole()}</h4>
-
-    <p>${intern.email}</p>
-    <p>School ${intern.school}</p>
-    <p>Employee ID# ${intern.id}</p>
+  <div class='card border-success col-lg-4 py-2' style='max-width: 18rem;'>
+    <div class='card-header text-center bg-success'>
+      <h3>${intern.name}</h3>
+      <h4>${intern.getRole()}</h4>
+    </div>
+    <div class='card-body bg-secondary'>
+      <p>Employee ID# ${intern.id}</p>
+      <p>School ${intern.school}</p>
+      <a href="mailto:${intern.email}" class="text-white">${intern.email}</a>
+    </div>
   </div>
     `;
 };
@@ -74,23 +88,23 @@ const createHTML = function (employeeCards) {
   return `
     <!DOCTYPE html>
     <html lang="en">
-    <head>
+      <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Team Roster</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-      <header>
-        <h1 class='bg-success py-4 text-justify'>Team Roster</h1>
-      </header>
-      <main>
-        <div class="d-flex">
-          ${employeeCards}
-        </div>
-      </main>
-    </body>
+      </head>
+      <body>
+        <header>
+          <h1 class='bg-secondary py-4 text-center border-bottom'>Team Roster</h1>
+        </header>
+        <main class="container">
+          <div class="row justify-content-around">
+            ${employeeCards}
+          </div>
+        </main>
+      </body>
     </html>
     `;
 };
