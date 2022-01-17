@@ -31,60 +31,63 @@ const createCards = (empTeam) => {
 
 const createManager = function (manager) {
   return `
-  <div class='card border-success col-lg-4 py-2' style='max-width: 18rem;'>
-    <div class='card-header text-center bg-success'>
-      <h3>${manager.name}</h3>
-      <h4>${manager.getRole()}</h4>
-    </div>
-    <div class='card-body bg-secondary'>
-      <p>Employee ID# ${manager.id}</p>
-      <p>Office # ${manager.officeNumber}</p>
-      <a href="mailto:${manager.email}" class="text-white">${manager.email}</a>
-    </div>
-  </div>
+            <div class='card border-success col-lg-4 py-2 m-3' style='max-width: 18rem;'>
+              <div class='card-header text-center bg-success'>
+                <h3>${manager.name}</h3>
+                <h4>${manager.getRole()}</h4>
+              </div>
+              <div class='card-body bg-secondary'>
+                <p>Employee ID# ${manager.id}</p>
+                <p>Office # ${manager.officeNumber}</p>
+                <a href="mailto:${manager.email}" class="text-white">${
+    manager.email
+  }</a>
+              </div>
+            </div>
     `;
 };
 
 const createEngineer = function (engineer) {
   return `
-  <div class='card border-success col-lg-4 py-2' style='max-width: 18rem;'>
-    <div class='card-header text-center bg-success'>
-      <h3>${engineer.name}</h3>
-      <h4>${engineer.getRole()}</h4>
-    </div>
-    <div class='card-body bg-secondary'>
-      <p>Employee ID# ${engineer.id}</p>
-      <p>Github <a href="https://github.com/${
-        engineer.github
-      }" class="text-white"
-      >${engineer.github}</p>
-      <a href="mailto:${engineer.email}" class="text-white">${
+            <div class='card border-success col-lg-4 py-2 m-3' style='max-width: 18rem;'>
+              <div class='card-header text-center bg-success'>
+                <h3>${engineer.name}</h3>
+                <h4>${engineer.getRole()}</h4>
+              </div>
+              <div class='card-body bg-secondary'>
+                <p>Employee ID# ${engineer.id}</p>
+                <p>Github <a href="https://github.com/${
+                  engineer.github
+                }" class="text-white"
+                >${engineer.github}</p>
+                <a href="mailto:${engineer.email}" class="text-white">${
     engineer.email
   }</a>
-    </div>
-  </div>
+              </div>
+            </div>
     `;
 };
 
 const createIntern = function (intern) {
   return `
-  <div class='card border-success col-lg-4 py-2' style='max-width: 18rem;'>
-    <div class='card-header text-center bg-success'>
-      <h3>${intern.name}</h3>
-      <h4>${intern.getRole()}</h4>
-    </div>
-    <div class='card-body bg-secondary'>
-      <p>Employee ID# ${intern.id}</p>
-      <p>School ${intern.school}</p>
-      <a href="mailto:${intern.email}" class="text-white">${intern.email}</a>
-    </div>
-  </div>
+            <div class='card border-success col-lg-4 py-2 m-3' style='max-width: 18rem;'>
+              <div class='card-header text-center bg-success'>
+                <h3>${intern.name}</h3>
+                <h4>${intern.getRole()}</h4>
+              </div>
+              <div class='card-body bg-secondary'>
+                <p>Employee ID# ${intern.id}</p>
+                <p>School ${intern.school}</p>
+                <a href="mailto:${intern.email}" class="text-white">${
+    intern.email
+  }</a>
+              </div>
+            </div>
     `;
 };
 
 // Generate the HTML page with the employee cards
 const createHTML = function (employeeCards) {
-  console.log(employeeCards);
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -97,7 +100,7 @@ const createHTML = function (employeeCards) {
       </head>
       <body>
         <header>
-          <h1 class='bg-secondary py-4 text-center border-bottom'>Team Roster</h1>
+          <h1 class='bg-secondary py-4 text-center'>Team Roster</h1>
         </header>
         <main class="container">
           <div class="row justify-content-around">
