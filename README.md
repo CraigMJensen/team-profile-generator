@@ -10,7 +10,9 @@
 
   * Using the command line, Managers can add employees information to a roster and display that information to an HTML page.
 
+## Link to Video Demonstration
 
+  * https://watch.screencastify.com/v/8O8jkFVEKwQPcH0ylt7R
 
 ## Table of Contents
 
