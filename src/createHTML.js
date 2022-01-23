@@ -58,7 +58,7 @@ const createEngineer = function (engineer) {
                 <p>Employee ID# ${engineer.id}</p>
                 <p>Github <a href="https://github.com/${
                   engineer.github
-                }" class="text-white"
+                }" target="_blank" class="text-white"
                 >${engineer.github}</p>
                 <a href="mailto:${engineer.email}" class="text-white">${
     engineer.email

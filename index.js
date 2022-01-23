@@ -79,6 +79,9 @@ const managerInput = () => {
 };
 
 const employeeInput = () => {
+  console.log(
+    "\n============================\nEnter the Employee's details\n============================\n"
+  );
   return inquirer
     .prompt([
       {
@@ -158,7 +161,8 @@ const employeeInput = () => {
       {
         type: 'confirm',
         name: 'confirmAddEmployee',
-        message: 'Do you want to add another Employee?',
+        message:
+          'Do you want to add another Employee?\nSelect "No" to finalize the Team Roster.',
         default: false,
       },
     ])
@@ -190,13 +194,17 @@ const writeFile = (data) => {
       return;
     } else {
       console.log(
-        'Open the dist folder. Your HTML page is ready to be viewed!'
+        '\n===========================================================\nOpen the dist folder. Your Team HTML is ready to be viewed!\n==========================================================='
       );
     }
   });
 };
 
-managerInput()
+managerInput(
+  console.log(
+    "\n===========================\nEnter the Manager's details\n===========================\n"
+  )
+)
   .then(employeeInput)
   .then((teamArray) => {
     return createCards(teamArray);
